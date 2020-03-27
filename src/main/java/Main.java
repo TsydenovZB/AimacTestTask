@@ -22,9 +22,8 @@ public class Main {
         } else {
             Main main = new Main(args);
             JsonWorker jsonWorker = new JsonWorker();
-            jsonWorker.jsonReader(main.input);
+            jsonWorker.jsonReader(main.input, main.operationType);
         }
-        System.out.println("ffff");
 
     }
 

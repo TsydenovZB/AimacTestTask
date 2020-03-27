@@ -1,0 +1,5 @@
+{
+  "url" : "jdbc:postgresql://localhost:5432/market",
+  "login" : "postgres",
+  "password" : "HotViOp1"
+}
