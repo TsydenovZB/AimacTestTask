@@ -1,5 +1,6 @@
-import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.HashMap;
 
 public class Main {
     private String operationType;
@@ -22,9 +23,15 @@ public class Main {
         } else {
             Main main = new Main(args);
             JsonWorker jsonWorker = new JsonWorker();
-            jsonWorker.jsonReader(main.input, main.operationType);
-        }
+            String outputJson = jsonWorker.jsonReader(main.input, main.operationType);
 
+            try (PrintWriter printWriter = new PrintWriter(main.output)) {
+                printWriter.print(outputJson);
+            } catch (IOException e) {
+                System.out.println(e.getMessage());
+            }
+
+        }
     }
 
     public String getOperationType() {
